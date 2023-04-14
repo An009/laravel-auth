@@ -15,9 +15,7 @@ use App\Http\Controllers\AuthController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
 //Car Route
 Route::middleware(['auth'])->group(function () {
 Route::resource('cars', CarController::class);
@@ -26,11 +24,14 @@ Route::get('logout', [AuthController::class, 'logout'])->name('logout');
 //Auth Routes
 Route::group(['middleware'=>'guest'],function(){
 Route::get('/',function(){
-return redirect()->route('login');
+return redirect()->route('welcome');
 });
 Route::get('login', [AuthController::class, 'index'])->name('login');
-Route::post('post-login', [AuthController::class, 'postLogin'])->name('login.post'); 
+Route::post('post-login', [AuthController::class, 'postLogin'])->name('login.post');
 Route::get('registration', [AuthController::class, 'registration'])->name('register');
-Route::post('post-registration', [AuthController::class, 'postRegistration'])->name('register.post'); 
+Route::post('post-registration', [AuthController::class, 'postRegistration'])->name('register.post');
 });
+Route::get('/', function () {
+    return view('welcome');
+})->name('welcome');
 

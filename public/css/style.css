@@ -1,0 +1,90 @@
+.card.car {
+    width: 400px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2rem;
+    box-shadow: 5px 5px 6px rgba(0, 0, 0, 0.6);
+}
+
+.car-image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+.card-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    box-shadow: 5px 5px 6px rgba(0, 0, 0, 0.6);
+    border: none;
+    border-radius: 20px;
+    margin-bottom: 5px;
+}
+/* this for edit section especialy image section */
+.image-container {
+    position: relative;
+    width: 300px;
+    height: 200px;
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.image-container:hover .image-overlay {
+    opacity: 1;
+}
+
+.edit-image-btn {
+    display: none;
+}
+
+.image-container:hover .edit-image-btn {
+    display: block;
+}
+/* welcome body */
+bg-image {
+    background-image: url(../storage/Garagebg.jpg);
+}
+.my-title {
+    background-color: blue;
+    color: aliceblue;
+}
+.my-section {
+    background-image: url(../storage/Garagebg.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    color: #fff;
+    position: relative;
+}
+
+.my-section::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* adjust the opacity here */
+}
+.my-section h1{
+    z-index: 100;
+}
